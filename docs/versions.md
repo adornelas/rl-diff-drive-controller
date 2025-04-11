@@ -46,3 +46,14 @@
 - Env file: `envs/env_v04_balanced_reward.py`
 - Train script: `training/train_v04.py`
 - Plot: `docs/figures/v04_response.png`
+
+## v0.5 - `slow_vref`
+- Introduced slower `v_ref` signal: `0.3 * sin(0.1 * t)`
+- Maintains same `w_ref` and motor model (`alpha = 1.0`)
+- Reward: `-40 * e_v² - 10 * e_w²` to emphasize linear tracking
+- Action noise increased to improve exploration (`σ = 0.3`)
+- Trained for 300k steps to improve policy convergence
+
+- Env file: `envs/env_v05_slow_vref.py`
+- Train script: `training/train_v05.py`
+- Plot: `docs/figures/v05_response.png`
