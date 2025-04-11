@@ -35,3 +35,14 @@
 - Env file: `envs/env_v03_penalized_reward.py`
 - Train script: `training/train_v03.py`
 - Plot: `docs/figures/v03_response.png`
+
+## v0.4 - `balanced_reward`
+- Reward function adjusted to prioritize linear velocity tracking:
+  - `reward = -20 * e_v² - 10 * e_w²`
+- Purpose: encourage agent to also learn to follow `v_ref`, not just `w_ref`
+- Maintains sinusoidal references and instant response
+- Useful for evaluating controller balance
+
+- Env file: `envs/env_v04_balanced_reward.py`
+- Train script: `training/train_v04.py`
+- Plot: `docs/figures/v04_response.png`
