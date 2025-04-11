@@ -57,3 +57,14 @@
 - Env file: `envs/env_v05_slow_vref.py`
 - Train script: `training/train_v05.py`
 - Plot: `docs/figures/v05_response.png`
+
+## v0.6 - `no_wref`
+- Reference angular velocity (`w_ref`) set to zero
+- Focused training on linear velocity tracking only
+- Reward: `-40 * e_v² - 10 * e_w²`
+- Slower sine wave used for `v_ref`: `0.3 * sin(0.1 * t)`
+- Same motor model (instantaneous response), trained with more noise and 300k steps
+
+- Env file: `envs/env_v06_no_wref.py`
+- Train script: `training/train_v06.py`
+- Plot: `docs/figures/v06_response.png`
